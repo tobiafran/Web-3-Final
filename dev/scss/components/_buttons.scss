@@ -1,3 +1,42 @@
 /* =============
     Buttons
 ============= */
+
+@mixin btn($bg-color){
+    background-color: $bg-color;
+    padding: 15px 30px;
+    transition: .3s;
+    color: $white;
+    text-decoration: none;
+    margin: 100px;
+    @include btn-font();
+
+    @if $bg-color == $teal{
+        color: $white;
+
+        &:hover{
+            background-color: $darkblue;
+            transition: .3s;
+        }
+    }
+    
+    @if $bg-color == $white{
+        color: $darkblue;
+
+        &:hover{
+            background-color: $teal;
+            transition: .3s;
+            color: $white;
+        }
+    }
+
+    @include lg{
+        font-size: 30px;
+    }
+}
+
+
+
+a.-btn{
+    @include btn($white);
+}
