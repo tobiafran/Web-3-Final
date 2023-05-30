@@ -315,52 +315,145 @@ template {
   display: none; }
 
 /* =============
-    Base
-============= */
-/* =============
     Typography
 ============= */
 h1 {
   font-family: 'Playfair Display', serif;
-  font-weight: 400;
   padding: 10px 0 20px;
-  font-size: 40px; }
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 58px;
+  line-height: 72px;
+  color: #4C5767; }
 
 h2 {
   font-family: 'Playfair Display', serif;
-  font-weight: 400;
   padding: 10px 0 20px;
-  font-size: 20px;
-  color: black; }
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 40px;
+  line-height: 56px;
+  color: #B08923; }
 
 h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 10px 0 20px; }
+  padding: 10px 0 20px;
+  font-size: 16px;
+  color: #B08923; }
+  @media (min-width: 1024px) {
+    h3 {
+      font-size: 20px; } }
+
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #4C5767; }
+  @media (min-width: 1024px) {
+    h4 {
+      font-size: 24px; } }
+
+h5 {
+  font-family: 'Playfair Display', serif;
+  padding: 10px 0 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1D3043;
+  font-size: 20px; }
+  @media (min-width: 1024px) {
+    h5 {
+      font-size: 24px; } }
+
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #4C5767; }
+  @media (min-width: 1024px) {
+    h6 {
+      font-size: 14px; } }
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #4C5767; }
+  @media (min-width: 1024px) {
+    p {
+      font-size: 16px; } }
 
 /* =============
     Buttons
 ============= */
-a.-btn {
-  background-color: #ffffff;
+a.btn {
+  background-color: #1D3043;
   padding: 15px 30px;
   transition: .3s;
   color: #ffffff;
   text-decoration: none;
   margin: 100px;
+  display: inline-block;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  letter-spacing: 2px;
-  color: #34485C; }
-  a.-btn:hover {
-    background-color: #49B5AE;
-    transition: .3s;
-    color: #ffffff; }
+  letter-spacing: 2px; }
   @media (min-width: 1024px) {
-    a.-btn {
-      font-size: 30px; } }
+    a.btn {
+      font-size: 20px; } }
+
+/* =============
+    Base
+============= */
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px; }
+
+img {
+  max-width: 100%; }
+
+section {
+  padding: 40px 20px;
+  gap: 30px; }
+  @media (min-width: 1024px) {
+    section {
+      padding: 150px 200px; } }
+  section.white-bg {
+    background-color: white; }
+  section.gray {
+    background-color: #4C5767; }
+    section.gray * {
+      color: #ffffff; }
+    section.gray a.btn {
+      background-color: white;
+      padding: 15px 30px;
+      transition: .3s;
+      color: #ffffff;
+      text-decoration: none;
+      margin: 100px;
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #1D3043;
+      background-color: #ffffff; }
+      section.gray a.btn:hover {
+        background-color: #B08923;
+        transition: .3s;
+        color: #ffffff; }
+      @media (min-width: 1024px) {
+        section.gray a.btn {
+          font-size: 20px; } }
+  section.center {
+    text-align: center; }
+
+article {
+  display: flex;
+  flex-direction: column; }
+  @media (min-width: 1024px) {
+    article {
+      flex-direction: row; } }
 
 /* =============
     Forms
@@ -380,9 +473,67 @@ textarea {
 /* =============
     Navigation
 ============= */
+header {
+  background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+  @media (min-width: 1024px) {
+    header {
+      padding: 150px 200px; } }
+  header #burger-btn {
+    display: block; }
+    header #burger-btn span, header #burger-btn span::before, header #burger-btn span::after {
+      height: 5px;
+      width: 30px;
+      background-color: #1D3043; }
+    header #burger-btn span {
+      display: block;
+      position: relative; }
+      header #burger-btn span::before {
+        position: absolute;
+        content: " ";
+        top: -10px; }
+      header #burger-btn span::after {
+        position: absolute;
+        content: " ";
+        top: 10px; }
+  header #burger-container {
+    display: block;
+    position: relative;
+    z-index: 3; }
+    header #burger-container:hover {
+      cursor: pointer; }
+    @media (min-width: 1024px) {
+      header #burger-container {
+        display: none; } }
+  header #main-menu {
+    background-color: green;
+    transition: .3s;
+    height: 100vw;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    right: -100%; }
+    header #main-menu ul {
+      display: flex; }
+    @media (min-width: 1024px) {
+      header #main-menu {
+        display: inline;
+        position: relative;
+        height: auto; } }
+    header #main-menu.show-menu {
+      right: 0;
+      transition: .3s; }
+
 /* =============
     Header
 ============= */
 /* =============
     Footer
 ============= */
+ul.practice-areas li {
+  background-color: #1D3043; }

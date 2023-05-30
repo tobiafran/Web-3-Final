@@ -9,9 +9,12 @@
     color: $white;
     text-decoration: none;
     margin: 100px;
+
+    display: inline-block;
+    
     @include btn-font();
 
-    @if $bg-color == $teal{
+    @if $bg-color == $gold{
         color: $white;
 
         &:hover{
@@ -22,21 +25,22 @@
     
     @if $bg-color == $white{
         color: $darkblue;
+        background-color: $white;
 
         &:hover{
-            background-color: $teal;
+            background-color: $gold;
             transition: .3s;
             color: $white;
         }
     }
 
     @include lg{
-        font-size: 30px;
+        font-size: 20px;
     }
 }
 
 
 
-a.-btn{
-    @include btn($white);
+a.btn{
+    @include btn($darkblue);
 }

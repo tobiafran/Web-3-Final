@@ -2,4 +2,98 @@
     Base
 ============= */
 
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+img{
+    max-width: 100%;
+}
+
+
+
+@mixin flex(){
+    display: flex;
+    flex-direction: column;
+
+    @include lg{
+        flex-direction: row;
+    }
+}
+
+@mixin grid-space(){
+
+    gap: 30px;
+
+    @include lg{
+    }
+}
+
+
+@mixin grid-two(){
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    @include lg{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@mixin grid-three(){
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    @include lg{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+@mixin site-padding(){
+    padding: 40px 20px;
+
+    @include lg{
+        padding: 150px 200px;
+    }
+}
+
+
+section{
+    @include site-padding();
+    @include grid-space();
+    
+
+    &.white-bg{
+        background-color: white;
+    }
+
+    &.gray{
+        background-color: $gray;
+        *{
+            color: $white;
+        }
+        a.btn{
+            @include btn(white);
+        }
+    }
+
+    &.center{
+        text-align: center
+    }
+}
+
+
+
+article{
+    @include flex();
+}
+
+// ul{
+//     @include grid-three();
+// }
+
 
